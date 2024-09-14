@@ -412,7 +412,7 @@ const TvPage = () => {
                 >
                   <Grid>
                     <h3 className="z0 color-white w-100 fw-700 text-center m-0 align-content-end">
-                      Tv
+                      Tv Series
                     </h3>
                   </Grid>
                 </Button>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Grid,
   Box,
@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 
 const windowWidth = window.innerWidth;
-// const windowHeight = window.innerHeight;
 
 const Filtering = ({
   options,
@@ -19,6 +18,24 @@ const Filtering = ({
   handleSelectionChange,
   handleReload,
 }) => {
+  // Local state for managing the search input with a delay
+  const [searchInput, setSearchInput] = useState("");
+
+  // Delay duration (in milliseconds)
+  const debounceDelay = 500;
+
+  // Handle search with debouncing
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      handleSearch(searchInput); // Call the search function after the delay
+    }, debounceDelay);
+
+    // Cleanup the timeout if the component is unmounted or the searchInput changes
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchInput]); // Effect runs whenever searchInput changes
+
   // Determine if all selected options are empty
   const allOptionsEmpty = Object.values(selectedOptions).every(
     (value) => value === "" || value === null
@@ -29,7 +46,7 @@ const Filtering = ({
       <Grid container xs={12} mt={3} mb={1} mr={0}>
         <Grid xs={12}>
           <input
-            onChange={(event) => handleSearch(event.target.value)}
+            onChange={(event) => setSearchInput(event.target.value)} // Update local search state
             type="text"
             placeholder="Let's Start Searching.."
             style={{
