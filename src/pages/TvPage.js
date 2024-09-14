@@ -147,7 +147,7 @@ const TvPage = () => {
 
         setTorrents(allTorrents);
         setFilteredTorrents(allTorrents);
-        console.log(allTorrents.length);
+        // console.log(allTorrents.length);
         setTorrentCount(totalTorrentCount);
 
         setLoading(false);

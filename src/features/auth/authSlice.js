@@ -8,7 +8,7 @@ export const loginUser = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await authAPI.login(credentials);
-      // console.log(response);
+      // // console.log(response);
       localStorageService.setItem("token", response?.data?.auth?.token);
       localStorageService.setItem("userName", response?.data?.auth?.userName);
       localStorageService.setItem("userEmail", response?.data?.auth?.userEmail);

@@ -45,7 +45,7 @@ const Torrents = ({ activeMovie }) => {
 
   const handleMagnet = async (torrent) => {
     const magnetUrl = createMagnetURL(torrent);
-    console.log(magnetUrl);
+    // console.log(magnetUrl);
     window.open(magnetUrl);
   };
 

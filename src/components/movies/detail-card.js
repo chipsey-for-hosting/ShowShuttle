@@ -3,7 +3,7 @@ import { Card, CardActionArea, CardMedia } from "@mui/material";
 import "../../styles/movieCardStyles.css";
 
 const DetailCard = ({ movie }) => {
-  console.log(movie);
+  // console.log(movie);
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const primaryWidth = windowWidth / 30;

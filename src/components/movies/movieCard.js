@@ -9,7 +9,7 @@ import {
 import "../../styles/movieCardStyles.css";
 
 const MovieCard = ({ movie, onClick, isActive }) => {
-  console.log(movie);
+  // console.log(movie);
   const windowWidth = window.innerWidth;
   const primaryWidth = windowWidth / 30;
 

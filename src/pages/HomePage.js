@@ -50,7 +50,7 @@ const HomePage = () => {
 
   // Function to handle selection change
   const handleSelectionChange = (event, dropdown) => {
-    console.log(dropdown);
+    // console.log(dropdown);
 
     setSelectedOptions((prevState) => ({
       ...prevState,
@@ -100,7 +100,7 @@ const HomePage = () => {
               ? Math.floor(movieCount / moviesPerPage) + 1
               : Math.floor(movieCount / moviesPerPage)
           );
-          console.log(finalPageNo);
+          // console.log(finalPageNo);
         } else {
           setIsNoMovies(true);
         }
@@ -128,7 +128,7 @@ const HomePage = () => {
         setActiveMovie(movieDetails?.data?.movie);
         if (movieDetails?.data?.movie?.cast !== undefined) {
           setCast(movieDetails?.data?.movie?.cast);
-          console.log(cast);
+          // console.log(cast);
         }
 
         setLoading(false);

@@ -9,7 +9,7 @@ import {
 import "../../styles/movieCardStyles.css";
 
 const DetailCardTV = ({ movie }) => {
-  console.log(movie);
+  // console.log(movie);
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const primaryWidth = windowWidth / 30;
