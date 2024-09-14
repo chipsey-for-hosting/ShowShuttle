@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import LoginPage from "../pages/LoginPage";
-import PrivateRoute from "./PrivateRoute";
 import TvPage from "../pages/TvPage";
-import InversePrivateRoute from "./InversePrivateRoute";
+// import LoginPage from "../pages/Login/Page";
+// import PrivateRoute from "./PrivateRoute";
+// import InversePrivateRoute from "./InversePrivateRoute";
 // import FavoritesPage from "../pages/FavoritesPage"; // Assuming you have this page
 
 const AppRoutes = () => {

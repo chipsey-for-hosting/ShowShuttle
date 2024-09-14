@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight;
+// const windowHeight = window.innerHeight;
 
 const Filtering = ({
   options,
