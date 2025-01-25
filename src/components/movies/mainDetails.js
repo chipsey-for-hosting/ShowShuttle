@@ -86,12 +86,13 @@ const MainDetails = ({ activeMovie }) => {
               color: "white",
             }}
           >
-            {activeMovie?.genres.map((genre, index) => (
-              <span key={index}>
-                {genre}
-                <span class="opacity-0">--</span>{" "}
-              </span>
-            ))}
+            {activeMovie?.genres?.length >= 0 &&
+              activeMovie?.genres?.map((genre, index) => (
+                <span key={index}>
+                  {genre}
+                  <span class="opacity-0">--</span>{" "}
+                </span>
+              ))}
           </div>
         </Box>
       </Grid>
