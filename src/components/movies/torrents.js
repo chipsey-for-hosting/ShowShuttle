@@ -6,6 +6,7 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 const Torrents = ({ activeMovie }) => {
   const windowWidth = window.innerWidth;
   const [dialogOpen, setDialogOpen] = useState(false);
+  const primaryWidth = windowWidth / 30;
 
   const handleSeedr = async (torrentUrl) => {
     try {
@@ -50,7 +51,7 @@ const Torrents = ({ activeMovie }) => {
   };
 
   return (
-    <Box mb={10} ml={5}>
+    <Box mb={1} ml={5}>
       <CustomDialog
         open={dialogOpen}
         onClose={handleDialogClose}
@@ -76,15 +77,15 @@ const Torrents = ({ activeMovie }) => {
       />
       <Typography
         variant="h6"
-        sx={{ color: "white", opacity: "0.25", fontSize: "2rem" }}
+        sx={{ color: "white", opacity: "0.25", fontSize: "1rem" }}
       >
         Torrents
       </Typography>
       <Grid
         container
         xs={12}
-        mb={2}
-        mt={3}
+        mb={1}
+        mt={1}
         sx={{ color: "white", opacity: 0.5 }}
       >
         <Grid xs={4}>
@@ -112,37 +113,48 @@ const Torrents = ({ activeMovie }) => {
         <Grid
           container
           xs={12}
-          mb={3}
+          mb={1}
           key={torrent.id}
           sx={{ alignItems: "center" }}
         >
-          <Grid xs={4} mb={3} ml={0}>
-            <Typography sx={{ color: "white", textAlign: "left" }}>
+          <Grid xs={4} mb={1} ml={0}>
+            <Typography
+              sx={{ color: "white", textAlign: "left" }}
+              style={{ fontSize: primaryWidth * 0.25 }}
+            >
               {torrent?.quality}
             </Typography>
-            <Typography sx={{ color: "white", textAlign: "left" }}>
+            <Typography
+              sx={{ color: "white", textAlign: "left" }}
+              style={{ fontSize: primaryWidth * 0.25 }}
+            >
               {torrent?.type} {torrent?.video_codec}
             </Typography>
             <Typography
               fontSize="small"
               sx={{ color: "grey", textAlign: "left" }}
+              style={{ fontSize: primaryWidth * 0.25 }}
             >
               {torrent?.audio_channels} audio Channels
             </Typography>
             <Typography
               fontSize="small"
               sx={{ color: "grey", textAlign: "left" }}
+              style={{ fontSize: primaryWidth * 0.25 }}
             >
               {torrent?.bit_depth} bit depth
             </Typography>
           </Grid>
           <Grid xs={3}>
-            <Typography sx={{ color: "grey", textAlign: "left" }}>
+            <Typography
+              sx={{ color: "grey", textAlign: "left" }}
+              style={{ fontSize: primaryWidth * 0.3 }}
+            >
               {torrent?.size}
             </Typography>
           </Grid>
-          <Grid xs={4} sx={{ fontSize: "0.75rem" }}>
-            <Grid container xs={12} spacing={1}>
+          <Grid xs={4} sx={{ fontSize: "0.7rem" }}>
+            <Grid container xs={12} gap={2}>
               <Grid xs={4}>
                 <a href={torrent?.url}>
                   <Button
@@ -151,7 +163,7 @@ const Torrents = ({ activeMovie }) => {
                       backgroundColor:
                         torrent?.type === "bluray" ? "green" : "white",
                       color: torrent?.type === "bluray" ? "white" : "black",
-                      fontSize: "0.6rem",
+                      fontSize: "0.5rem",
                     }}
                   >
                     Download
@@ -168,38 +180,35 @@ const Torrents = ({ activeMovie }) => {
                     backgroundColor:
                       torrent?.type === "bluray" ? "green" : "white",
                     color: torrent?.type === "bluray" ? "white" : "black",
-                    fontSize: "0.6rem",
+                    fontSize: "0.5rem",
                   }}
                 >
                   Magnet
                 </Button>
               </Grid>
               <Grid xs={4}>
-                <Button
+                {/* <Button
                   variant="contained"
                   onClick={() => handleSeedr(torrent?.url)}
                   sx={{
                     backgroundColor:
                       torrent?.type === "bluray" ? "green" : "white",
                     color: torrent?.type === "bluray" ? "white" : "black",
-                    fontSize: "0.6rem",
+                    fontSize: "0.5rem",
                   }}
                 >
                   Seedr
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
           </Grid>
           <div
-            class="w-100"
             style={{
-              height: 0.5,
-              backgroundColor: "grey",
-              opacity: "0.5",
+              marginBottom: "5rem",
             }}
           ></div>
         </Grid>
-      ))}{" "}
+      ))}
     </Box>
   );
 };
