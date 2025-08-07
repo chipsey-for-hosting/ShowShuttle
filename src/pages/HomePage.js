@@ -225,17 +225,17 @@ const HomePage = () => {
               <MainDetails activeMovie={activeMovie} />
               <Divider />
 
-              <Grid container xs={12} ml={5} mb={3} mt={3}>
+              <Grid container xs={12} ml={5} mb={0} mt={0}>
                 <Typography
                   variant="h6"
-                  sx={{ color: "white", opacity: "0.3", fontSize: "2rem" }}
+                  sx={{ color: "white", opacity: "0.3", fontSize: "1rem" }}
                 >
                   Cast
                 </Typography>
               </Grid>
-              <Grid container xs={12} mb={5} sx={{ height: "8rem" }}>
+              <Grid container xs={12} mb={0} sx={{ height: "8rem" }}>
                 {cast.map((item) => (
-                  <Grid item xs={1.5} mb={3} key={item.id}>
+                  <Grid item xs={1.5} mb={0} key={item.id}>
                     <Cast image={item?.url_small_image} name={item?.name} />
                   </Grid>
                 ))}
@@ -245,12 +245,12 @@ const HomePage = () => {
               <Typography
                 variant="h6"
                 m={5}
-                sx={{ color: "white", opacity: "0.5", fontSize: "2rem" }}
+                sx={{ color: "white", opacity: "0.3", fontSize: "1rem" }}
               >
                 Trailer
               </Typography>
               <YouTubeEmbed ytId={activeMovie?.yt_trailer_code} />
-              <Grid container mt={2} ml={3} mb={10}>
+              <Grid container ml={3}>
                 <Typography variant="h5" sx={{ color: "grey" }}>
                   {activeMovie?.title_english} - Official Trailer
                 </Typography>

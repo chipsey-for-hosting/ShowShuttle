@@ -17,15 +17,15 @@ const MovieHeading = ({ activeMovie }) => {
       >
         <div
           class="color-white align-content-end m-0 w-100 fw-600"
-          style={{ fontSize: primaryWidth * 0.6 }}
+          style={{ fontSize: primaryWidth * 0.45 }}
         >
           {activeMovie?.title_english}
-          <div class="opacity-50" style={{ fontSize: primaryWidth * 0.5 }}>
+          <div class="opacity-50" style={{ fontSize: primaryWidth * 0.3 }}>
             {activeMovie?.year}
           </div>
         </div>
         <h4
-          class="color-white w-100 mt-3 mb-3 fw-300 opacity-75"
+          class="color-white w-100 mt-1 mb-1 fw-300 opacity-75"
           style={{
             maxHeight: "170px",
             overflowY: "auto",

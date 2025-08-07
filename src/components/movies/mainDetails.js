@@ -7,7 +7,7 @@ const primaryWidth = windowWidth / 30;
 
 const MainDetails = ({ activeMovie }) => {
   return (
-    <Grid container xs={12} ml={5} mb={5}>
+    <Grid container xs={12} ml={5} mb={1}>
       <Grid xs={3}>
         <Box
           sx={{
@@ -30,7 +30,7 @@ const MainDetails = ({ activeMovie }) => {
               fontSize: "larger",
               fontWeight: "bold",
             }}
-            style={{ fontSize: primaryWidth * 0.5 }}
+            style={{ fontSize: primaryWidth * 0.4 }}
           >
             {activeMovie?.rating}
           </Typography>
@@ -58,6 +58,7 @@ const MainDetails = ({ activeMovie }) => {
               fontSize: "larger",
               fontWeight: "bold",
             }}
+            style={{ fontSize: primaryWidth * 0.4 }}
           >
             {activeMovie?.language}
           </Typography>
@@ -84,11 +85,12 @@ const MainDetails = ({ activeMovie }) => {
               display: "flex",
               flexWrap: "wrap",
               color: "white",
+              fontSize: primaryWidth * 0.4,
             }}
           >
             {activeMovie?.genres?.length >= 0 &&
               activeMovie?.genres?.map((genre, index) => (
-                <span key={index}>
+                <span key={index} style={{ fontSize: primaryWidth * 0.4 }}>
                   {genre}
                   <span class="opacity-0">--</span>{" "}
                 </span>
